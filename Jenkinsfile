@@ -42,7 +42,7 @@ pipeline {
         always {
             recordIssues enabledForFailure: true, tool: checkStyle(pattern: 'target/checkstyle-result.xml')
             recordIssues enabledForFailure: true, tool: spotBugs(pattern: 'target/spotbugsXml.xml')
-            stepcounter settings: [[encoding: 'UTF-8', filePattern: 'src/main/**/*.java', filePatternExclude: '', key: 'main'], [encoding: 'UTF-8', filePattern: 'src/test/**/*.java', filePatternExclude: 'src/test/**/*.java', key: 'test']]
+            stepcounter settings: [[encoding: 'UTF-8', filePattern: 'src/main/**/*.java', filePatternExclude: '', key: 'main'], [encoding: 'UTF-8', filePattern: 'src/test/**/*.java', filePatternExclude: '', key: 'test']]
         }
     }
 }
