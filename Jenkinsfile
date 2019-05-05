@@ -43,7 +43,7 @@ pipeline {
             recordIssues enabledForFailure: true, tool: checkStyle(pattern: 'target/checkstyle-result.xml')
             recordIssues enabledForFailure: true, tool: spotBugs(pattern: 'target/spotbugsXml.xml')
             stepcounter settings: [[encoding: 'UTF-8', filePattern: 'src/main/**/*.java', filePatternExclude: '', key: 'main'], [encoding: 'UTF-8', filePattern: 'src/test/**/*.java', filePatternExclude: '', key: 'test']]
-            publishCoverage adapters: [[jacocoAdapter path: 'target/site/jacoco/jacoco.xml']]
+            publishCoverage adapters: [jacocoAdapter('target/site/jacoco/jacoco.xml')]
         }
     }
 }
